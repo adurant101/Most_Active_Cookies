@@ -20,8 +20,8 @@ class Cookies:
         self.cookie_file = []
         with open(self.filename, 'r') as file:
             csv_file = csv.DictReader(file)
-            for x in csv_file:
-                self.cookie_file.append(x)
+            for dict in csv_file:
+                self.cookie_file.append(dict)
         return self.cookie_file
 
     '''

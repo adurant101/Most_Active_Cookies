@@ -6,6 +6,14 @@ class Cookies:
     def __init__(self, filename, date):
         self.filename = filename
         self.date = date
+        # Read file
+        self.read_file()
+        # Get file info into list
+        self.get_cookie_and_time()
+        # Get cookie count for date
+        self.cookies_count()
+        # Get cookies with highest count
+        self.get_cookies_with_highest_count()
 
     # Read csv file into dictionary
     def read_file(self):
@@ -60,14 +68,6 @@ def main():
     # Get filename and date as arguments from command line
     filename, date = sys.argv[1], sys.argv[2]
     cookie = Cookies(filename, date)
-    # Read file
-    cookie.read_file()
-    # Put file data into list
-    cookie.get_cookie_and_time()
-    # Get count of cookies with date
-    cookie.cookies_count()
-    # Get cookies with highest count
-    cookie.get_cookies_with_highest_count()
 
 if __name__ == "__main__":
     main()
